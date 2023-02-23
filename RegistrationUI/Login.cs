@@ -92,8 +92,8 @@ namespace Review_System.RegistrationUI
                         else
                         {
                             Console.Clear();
-                            //var user = new UserPageUI();
-                            //await user.UserPage(log);
+                            var user = new UserPageUI();
+                            await user.UserPage(log);
                             return;
                         }
                         break;
