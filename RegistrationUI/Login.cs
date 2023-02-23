@@ -61,7 +61,7 @@ namespace Review_System.RegistrationUI
                             Console.Clear();
                             Console.WriteLine("Successfully created\n");
                             var user = new UserPageUI();
-                            await user.UserPage();
+                            await user.UserPage(log);
 
                         }
                         break;
