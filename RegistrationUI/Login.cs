@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Review_System;
 using Review_System.AdminPageUI;
+using Review_System.UserPage;
 
 namespace Review_System.RegistrationUI
 {
@@ -59,8 +60,8 @@ namespace Review_System.RegistrationUI
                         {
                             Console.Clear();
                             Console.WriteLine("Successfully created\n");
-                            //var user = new UserPageUI();
-                            //await user.UserPage();
+                            var user = new UserPageUI();
+                            await user.UserPage();
 
                         }
                         break;
