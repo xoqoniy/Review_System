@@ -17,7 +17,7 @@ namespace Review_System.UserPage
         ReviewService reviewService = new ReviewService();
         Login login = new Login();
         OrganizationService organizationService = new OrganizationService();
-
+        Organization organization= new Organization();
 
 
         public async Task UserPage(string log)
@@ -31,7 +31,7 @@ namespace Review_System.UserPage
             Console.WriteLine("1. Search Organization ");
             Console.WriteLine("2. Show Organizations ");
             Console.WriteLine("3. My Comments ");
-            Console.WriteLine("4. RATING ");
+            Console.WriteLine("4. RATINGS ");
             Console.WriteLine("5. Back ");
 
             Console.Write("\nChoose one option: ");
@@ -126,6 +126,7 @@ namespace Review_System.UserPage
                     break;
 
                 case 3:
+                    Console.Write("Enter the name of the organization you want to rate: ");
                     string organizationname = Console.ReadLine();
                     var response2 = await organizationService.SearchByNameAsync(organizationname);
                     foreach(var item in response2)
@@ -163,7 +164,64 @@ namespace Review_System.UserPage
                             }
                         }
                     }
-                    
+                    while (true)
+                    {
+                        Console.Write("\nEnter 5 to return: ");
+                        Console.Write("\nEnter 0 to return to Main Menu: ");
+
+
+                        int pres = int.Parse(Console.ReadLine());
+                        if (pres == 5)
+                        {
+                            Console.Clear();
+                            goto case 1;
+                        }
+                        else if (pres == 0)
+                        {
+                            Console.Clear();
+                            goto start;
+                        }
+                    }
+
+                    break;
+                case 4:
+                    Console.Clear();
+                    var allreviews = await reviewService.GetAllAsync();
+                    Console.Write("Enter the name of the business to see ratings: ");
+                   
+                    if (allreviews.StatusCode == 200)
+                    {
+                        
+                        Console.WriteLine("All Organizations:");
+                        foreach (var org in allreviews.Value)
+                        {
+                            Console.WriteLine($"Title: {org.Title}\tComment: {org.Comment}\tuser_id: {org.UserId}\n" +
+                                $"Organization Name: {org.OrganisationName}\tRate: {org.Value}");
+                           
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: {allreviews.Message}");
+                    }
+                    while (true)
+                    {
+                        Console.Write("\nEnter 5 to return: ");
+                        Console.Write("\nEnter 0 to return to Main Menu: ");
+
+
+                        int pres = int.Parse(Console.ReadLine());
+                        if (pres == 5)
+                        {
+                            Console.Clear();
+                            goto case 1;
+                        }
+                        else if (pres == 0)
+                        {
+                            Console.Clear();
+                            goto start;
+                        }
+                    }
                     break;
                 default:
                     Console.WriteLine("You clicked the wrong number:");

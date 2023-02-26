@@ -8,11 +8,57 @@
   </PropertyGroup>
 
   <ItemGroup>
+    
+    <Compile Include="obj\Debug\net6.0\Review_System.AssemblyInfo.cs" />
+	
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net6.0\Review_System.deps.json" />
+    <Content Include="bin\Debug\net6.0\Review_System.runtimeconfig.json" />
+    <Content Include="obj\Debug\net6.0\Review_System.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\Review_System.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net6.0\Data.dll" />
+    <None Include="bin\Debug\net6.0\Data.pdb" />
+    <None Include="bin\Debug\net6.0\Domain.dll" />
+    <None Include="bin\Debug\net6.0\Domain.pdb" />
+    <None Include="bin\Debug\net6.0\Newtonsoft.Json.Bson.dll" />
+    <None Include="bin\Debug\net6.0\Newtonsoft.Json.dll" />
+    <None Include="bin\Debug\net6.0\Review_System.dll" />
+    <None Include="bin\Debug\net6.0\Review_System.exe" />
+    <None Include="bin\Debug\net6.0\Review_System.pdb" />
+    <None Include="bin\Debug\net6.0\Service.dll" />
+    <None Include="bin\Debug\net6.0\Service.pdb" />
+    <None Include="obj\Debug\net6.0\apphost.exe" />
+    <None Include="obj\Debug\net6.0\refint\Review_System.dll" />
+    <None Include="obj\Debug\net6.0\Review_System.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net6.0\Review_System.assets.cache" />
+    <None Include="obj\Debug\net6.0\Review_System.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net6.0\Review_System.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net6.0\Review_System.csproj.CopyComplete" />
+    <None Include="obj\Debug\net6.0\Review_System.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net6.0\Review_System.dll" />
+    <None Include="obj\Debug\net6.0\Review_System.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net6.0\Review_System.pdb" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Review_System.csproj.nuget.g.props" />
+    <None Include="obj\Review_System.csproj.nuget.g.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\Debug\net6.0\ref\" />
   </ItemGroup>
 
 </Project>
